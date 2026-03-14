@@ -1,0 +1,161 @@
+{
+    "dataRoles": [
+        {
+            "displayName": "Tab 1 — Axis",
+            "name": "axis1",
+            "kind": "Grouping",
+            "description": "Eje X para Tab 1"
+        },
+        {
+            "displayName": "Tab 1 — Values",
+            "name": "values1",
+            "kind": "Measure",
+            "description": "Valores para Tab 1"
+        },
+        {
+            "displayName": "Tab 2 — Axis",
+            "name": "axis2",
+            "kind": "Grouping",
+            "description": "Eje X para Tab 2"
+        },
+        {
+            "displayName": "Tab 2 — Values",
+            "name": "values2",
+            "kind": "Measure",
+            "description": "Valores para Tab 2"
+        },
+        {
+            "displayName": "Tab 3 — Axis",
+            "name": "axis3",
+            "kind": "Grouping",
+            "description": "Eje X para Tab 3"
+        },
+        {
+            "displayName": "Tab 3 — Values",
+            "name": "values3",
+            "kind": "Measure",
+            "description": "Valores para Tab 3"
+        }
+    ],
+    "objects": {
+        "tabs": {
+            "properties": {
+                "tabCount": {
+                    "type": { "numeric": true }
+                },
+                "tab1Label": {
+                    "type": { "text": true }
+                },
+                "tab1ChartType": {
+                    "type": { "text": true }
+                },
+                "tab2Label": {
+                    "type": { "text": true }
+                },
+                "tab2ChartType": {
+                    "type": { "text": true }
+                },
+                "tab3Label": {
+                    "type": { "text": true }
+                },
+                "tab3ChartType": {
+                    "type": { "text": true }
+                }
+            }
+        },
+        "tabStyle": {
+            "properties": {
+                "backgroundColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "activeColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "textColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "borderRadius": {
+                    "type": { "numeric": true }
+                },
+                "fontSize": {
+                    "type": { "formatting": { "fontSize": true } }
+                }
+            }
+        },
+        "chartStyle": {
+            "properties": {
+                "showGridlines": {
+                    "type": { "bool": true }
+                },
+                "showLabels": {
+                    "type": { "bool": true }
+                },
+                "animationDuration": {
+                    "type": { "numeric": true }
+                },
+                "maxDataPoints": {
+                    "type": { "numeric": true }
+                },
+                "labelFontSize": {
+                    "type": { "numeric": true }
+                },
+                "showTooltip": {
+                    "type": { "bool": true }
+                }
+            }
+        },
+        "tab1Colors": {
+            "properties": {
+                "color1": { "type": { "fill": { "solid": { "color": true } } } },
+                "color2": { "type": { "fill": { "solid": { "color": true } } } },
+                "color3": { "type": { "fill": { "solid": { "color": true } } } },
+                "color4": { "type": { "fill": { "solid": { "color": true } } } }
+            }
+        },
+        "tab2Colors": {
+            "properties": {
+                "color1": { "type": { "fill": { "solid": { "color": true } } } },
+                "color2": { "type": { "fill": { "solid": { "color": true } } } },
+                "color3": { "type": { "fill": { "solid": { "color": true } } } },
+                "color4": { "type": { "fill": { "solid": { "color": true } } } }
+            }
+        },
+        "tab3Colors": {
+            "properties": {
+                "color1": { "type": { "fill": { "solid": { "color": true } } } },
+                "color2": { "type": { "fill": { "solid": { "color": true } } } },
+                "color3": { "type": { "fill": { "solid": { "color": true } } } },
+                "color4": { "type": { "fill": { "solid": { "color": true } } } }
+            }
+        }
+    },
+    "dataViewMappings": [
+        {
+            "conditions": [
+                {
+                    "axis1": { "max": 1 }, "values1": { "max": 1 },
+                    "axis2": { "max": 1 }, "values2": { "max": 1 },
+                    "axis3": { "max": 1 }, "values3": { "max": 1 }
+                }
+            ],
+            "categorical": {
+                "categories": {
+                    "select": [
+                        { "for": { "in": "axis1" } },
+                        { "for": { "in": "axis2" } },
+                        { "for": { "in": "axis3" } }
+                    ],
+                    "dataReductionAlgorithm": { "top": { "count": 1000 } }
+                },
+                "values": {
+                    "select": [
+                        { "bind": { "to": "values1" } },
+                        { "bind": { "to": "values2" } },
+                        { "bind": { "to": "values3" } }
+                    ]
+                }
+            }
+        }
+    ],
+    "privileges": []
+}
